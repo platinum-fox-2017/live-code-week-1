@@ -1,33 +1,38 @@
 function generateHourglass(num) {
 	let result = [],
-		iter = num + 1,
-		index = 0;
-
-	// for (var i = 0; i < num; i++) {
-	// 	for (var j = i * 2 - 1; j >= 0; j--) {
-	// 		Things[i]
-	// 	}
-	// }
+		iter = num + 1;
 
 	while(--iter && iter > 1) {
-		let space = ((num + 1) * 2 - 1) - (iter * 2 - 1) / 2,
+		let space = num - iter,
 			temp = '';
-
+			
 		temp += generateItem(space, ' ');
 		temp += generateItem(iter * 2 - 1, 'x');
 		temp += generateItem(space, ' ');
 
 		result.push(temp);
-		index += 2;
 	}
-	result.push(generateX(iter));
-	while(iter++ && iter <= num) result.push(generateX(iter * 2 - 1));
+
+	result.push(generateItem(num - iter, ' ') + generateItem(iter, 'x') + generateItem(num - iter, ' '));
+	
+	while(iter++ && iter <= num) {
+		let space = num - iter,
+			temp = '';
+			
+		temp += generateItem(space, ' ');
+		temp += generateItem(iter * 2 - 1, 'x');
+		temp += generateItem(space, ' ');
+
+		result.push(temp);
+	}
 
 	return result;
 }
 
-function printHourglass(argument) {
-	// body...
+function printHourglass(arr) {
+	for (var i = 0; i < arr.length; i++) {
+		console.log(arr[i]);
+	}
 }
 
 function generateItem(num, item) {
@@ -38,4 +43,12 @@ function generateItem(num, item) {
 	return result;
 }
 
-let hrglass1 = generateHourglass(4);
+let hrglass1 = generateHourglass(1);
+console.log(hrglass1);
+console.log(typeof hrglass1);
+printHourglass(hrglass1);
+
+let hrglass2 = generateHourglass(2);
+console.log(hrglass2);
+console.log(typeof hrglass2);
+printHourglass(hrglass2);
