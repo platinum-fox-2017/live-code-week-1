@@ -5,11 +5,11 @@ function generateParen(num) {
 	for (let i = 0; i < num; i++) initParentheses += ')';
 
 	parentheses.push(initParentheses);
-	while(num--){
-		findParenRight(parentheses, initParentheses, num);	
-		findParenLeft(parentheses, initParentheses, num);
+	for (var i = 1; i <= num*2; i++) {
+		findParenRight(parentheses, initParentheses, i % num);
+		findParenLeft(parentheses, initParentheses, i % num);
 	}
-	
+
 	console.log(parentheses);
 
 }
