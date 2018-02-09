@@ -16,37 +16,39 @@ function lubangTerbesar(array) {
 
     for (let i = 0; i < board.length; i++) {
         for (let j = 0; j < board.length; j++) {
-
-
+   
             if (board[i][j] === '0' && board[i][j + 1] === '0') {
                 lubangBesar += 1
                 posfor0.push([i, j])
-            } 
-            // else if (board[i][j] === '0') {
-            //     lubangKecil += 1
-            //     posfor0Kecil.push([i, j])
+            } else if (board[i][j] === '0') {
+                lubangKecil += 1
+                posfor0Kecil.push([i, j])
+            }
+
+
+            // console.log(i, j)
+            // console.log(board)
+            // if(board[i][j] === '0') {
+               
+            //     console.log(true)
+            // } else {
+            //     console.log(false)
             // }
+            // console.log(board[3][2])
 
         }
     }
 
- 
-    console.log(board)
-    console.log(lubangBesar)
-    // console.log(lubangKecil)
-    // if(lubangBesar > lubangKecil) {
-    //     return lubangBesar
-    // } else {
-    //     return posfor0Kecil.length
-    // }
+    if(lubangBesar === 1) {
+        return posfor0Kecil.length
+    } else {
+        return lubangBesar
+    }
     
-    // console.log(lubangKecil)
-    console.log(posfor0)
-    // console.log(posfor0Kecil)
-    // console.log(posfor0[0])
+
 }
 
 
-// console.log(lubangTerbesar(["00111", "01101", "00100", "11110"])); // 3
-// console.log(lubangTerbesar(["111", "111", "111", "100"])); // 2
+console.log(lubangTerbesar(["00111", "01101", "00100", "11110"])); // 3
+console.log(lubangTerbesar(["111", "111", "111", "100"])); // 2
 console.log(lubangTerbesar(["00111", "10011", "00111", "10010","00110",'10111'])); // 6
