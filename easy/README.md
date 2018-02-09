@@ -1,6 +1,6 @@
 # Hourglass Generator
 
-Buatlah sebuah function bernama generateHourglass dan printHourglass. 
+Buatlah sebuah function bernama generateHourglass dan printHourglass.
 
 Function generateHourglass adalah sebuah function yang menerima sebuah parameter berupa number dengan asumsi nilai parameternya lebih dari 0. Function akan mereturn sebuah nilai yang tipe data-nya array of string, dan memiliki element di dalamnya berupa simbol ``'#'``.
 
@@ -32,7 +32,7 @@ console.log('===============================');
 let hrglass2 = generateHourglass(2);
 console.log(hrglass2);
 /*
-[ 'xxx', ' x ', 'xxx' ]
+[ '###', ' # ', '###' ]
 */
 console.log(typeof hrglass2);  // object
 console.log(printHourglass(hrglass2));
