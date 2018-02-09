@@ -1,5 +1,3 @@
-
-
 function generateParen(num){
     let hasil = []
     let x = 0
@@ -24,7 +22,6 @@ function generateParen(num){
                 totalValue += 0
                 zero--
             }else if(randomValue === 1 && zero < one){
-                console.log("in")
                 combine.push(')')
                 totalValue += 1
                 one--
