@@ -8,22 +8,26 @@ function lubangTerbesar(arr){
     for(let j=0; j<arr[i].length; j++){
       temp.push([])
       if(arr[i][j] == 0){
-        if(arr[i][j+1] !== 1 && arr[i][j+1] !== undefined){
+        if(arr[j+1] !== undefined && arr[i][j+1] !== 1){
           temp[i+j].push('0')
         }
-        if(arr[i+1][j] !== 1 && arr[i+1][j] !== undefined){
+        else if(arr[i+1] !== undefined && arr[i+1][j] !== 1){
           temp[i+j].push('0')
         }
-        if(arr[i-1][j] !== 1 && arr[i-1][j] !== undefined){
+        else if(arr[i-1] !== undefined && arr[i-1][j] !== 1){
           temp[i+j].push('0')
         }
-        if(arr[i][j-1] !== 1 && arr[i][j-1] !== undefined){
+        else if(arr[j-1] !== undefined && arr[i][j-1] !== 1){
           temp[i+j].push('0')
         }
       }
     }
   }
-  console.log(temp);
+  let horizontal = 0
+  temp.sort()
+  for(let i=0; i<temp.length; i++){
+  }
+  console.log(horizontal);
 }
 
 console.log(lubangTerbesar(["00111", "01101", "00100", "11110"])); // 3
