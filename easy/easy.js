@@ -7,7 +7,7 @@ function generateHourglass(number) {
     tempStr += (countSpace(i) + countHashtag((2*number-1)-2*i) + countSpace(i));
     arr.push(tempStr);
   }
-  for (let i = number-1; i >= 0; i--) {
+  for (let i = number-2; i >= 0; i--) {
     let tempStr = new String();
     tempStr += (countSpace(i) + countHashtag((2*number-1)-2*i) + countSpace(i));
     arr.push(tempStr);
@@ -42,16 +42,23 @@ function printHourglass(nestedArr) {
 console.log('===============================');
 let hrglass5 = generateHourglass(5);
 console.log(hrglass5);
-/*
-[ 'xxxxxxxxx',
-  ' xxxxxxx ',
-  '  xxxxx  ',
-  '   xxx   ',
-  '    x    ',
-  '   xxx   ',
-  '  xxxxx  ',
-  ' xxxxxxx ',
-  'xxxxxxxxx' ]
-*/
 console.log(typeof hrglass5);  // object
 console.log(printHourglass(hrglass5));
+
+console.log('===============================');
+let hrglass4 = generateHourglass(4);
+console.log(hrglass4);
+console.log(typeof hrglass4);  // object
+console.log(printHourglass(hrglass4));
+
+console.log('===============================');
+let hrglass3 = generateHourglass(3);
+console.log(hrglass3);
+console.log(typeof hrglass3);  // object
+console.log(printHourglass(hrglass3));
+
+console.log('===============================');
+let hrglass2 = generateHourglass(2);
+console.log(hrglass2);
+console.log(typeof hrglass2);  // object
+console.log(printHourglass(hrglass2));
