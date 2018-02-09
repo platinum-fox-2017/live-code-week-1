@@ -8,13 +8,12 @@ function lubangTerbesar(arr) {
     var tempNumb = []
     for (var j = 0; j < firstArr[0].length; j++) {
       if (firstArr[i][j] ===  '0') {
-      }
       tempNumb.push(firstArr[i][j])
-      // console.log(tempNumb);
+      }
     }
   }
   // console.log(tempNumb);
-  return tempNumb.length-1
+  return tempNumb.length
 }
 
 console.log(lubangTerbesar(["00111", "01101", "00100", "11110"])); // 3
