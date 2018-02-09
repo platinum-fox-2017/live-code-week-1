@@ -30,9 +30,11 @@ function generateHourglass(num) {
 }
 
 function printHourglass(arr) {
+	var result = ''
 	for (var i = 0; i < arr.length; i++) {
-		console.log(arr[i]);
+		result += arr[i] + '\n';
 	}
+	return result;
 }
 
 function generateItem(num, item) {
@@ -46,9 +48,19 @@ function generateItem(num, item) {
 let hrglass1 = generateHourglass(1);
 console.log(hrglass1);
 console.log(typeof hrglass1);
-printHourglass(hrglass1);
+console.log(printHourglass(hrglass1));
 
 let hrglass2 = generateHourglass(2);
 console.log(hrglass2);
 console.log(typeof hrglass2);
-printHourglass(hrglass2);
+console.log(printHourglass(hrglass2));
+
+let hrglass3 = generateHourglass(3);
+console.log(hrglass3);
+console.log(typeof hrglass3);
+console.log(printHourglass(hrglass3));
+
+let hrglass4 = generateHourglass(4);
+console.log(hrglass4);
+console.log(typeof hrglass4);
+console.log(printHourglass(hrglass4));
