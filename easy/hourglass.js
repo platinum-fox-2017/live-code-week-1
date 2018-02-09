@@ -31,13 +31,26 @@ function generateHourglass(value){
       temp += '#'
     }
     result.push(temp)
-    total -= 2
+    total -= value-1
   }
-  for(let i=0; i<arr; i++){
-    
+  for(let i=1; i<value; i++){
+    total += value+1
+    let temp = ''
+    for(let j=0; j<total; j++){
+      temp += '#'
+    }
+    result.push(temp)
   }
   return result
 }
 
-let hrglass2 = generateHourglass(3);
-console.log(hrglass2);
+function printHourglass(arr){
+  for(let i=0; i<arr.length; i++){
+    console.log(arr[i]);
+  }
+}
+
+let hrglass3 = generateHourglass(3);
+console.log(hrglass3);
+console.log(typeof hrglass3); // object
+printHourglass(hrglass3);
