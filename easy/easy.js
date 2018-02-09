@@ -2,12 +2,20 @@ function generateHourGlass(input){
   var arr = []
   var obj = {}
   var content = '#'
+
   for(let i=0; i<input; i++){
-    //obj = arr.push(content[i])
     arr.push([])
-    for(let j=0; j<input; j++){
+    for(let j=0; j<i; j++){
+      arr[i].push('')
+    }
+    for(let k=0; k<input; k++){
       arr[i].push(content)
-      j++
+    }
+  }
+  for(let x=input; x>0; x-- ){
+    arr.push('')
+    for(let y=input[x]; y>0; y--){
+      arr.push(content)
     }
   }
   return arr
