@@ -3,39 +3,33 @@ function generateHourglass(num) {
 
 /*
 n selisih arr
-1    0    1    (i=1)
+1    0    1    (i=1)                  0-1-0
 2    1    3    (i=3,1,3)
-3    2    5    (i=5,3,1,3,5)
+3    2    5    (i=5,3,1,3,5)          0-5-0; 1-3-1; 2-1-2; 1-3-1; 0-5-0
 4    3    7    (i=7,5,3,1,3,5,7)
 5    4    9    (i=9,7,5,3,1,3,5,7,9)
 }
 */
   //membuat array
   let arr = []
-  for(let i=1; i<=num; i++) {
-    for(let j=(i*2-1); j<=(i*2-1); j++) {
-      arr.push([])
+  for(let i=0; i<=num+2; i++) {
+    arr.push('')
+    let text = ''
+    for(let j=0; j<i; j++) {
+      if(j == 0 || j == num+2) {
+        text += ''
+      }
+      text += '#'
     }
+    arr[i] += text
   }
+
+  //memasukan # da ' '
+
+
+
+
   console.log(arr);
-
-  //memasukan #
-
-
-
-  
-  // for(i=0; i<num; i++) {
-  //   let text = ''
-  //   for(j=num; j>i; j--) {
-  //     if(j%2 == 1) {
-  //       for(let k=j; k>0; k--) {
-  //         text += '#'
-  //       }
-  //     }
-  //   }
-  //   console.log(text);
-  // }
-
 }
 
 console.log(generateHourglass(3));
