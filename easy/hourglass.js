@@ -1,28 +1,4 @@
-// function generateHourglass(value){
-//   let result = [];
-//   for(let i=0; i<=value*2-1; i++){
-//     let temp = [];
-//     for(let j=0; j<=value*2-1; j++){
-//       if(i%2 === 0){
-//         temp += '#'
-//       }
-//       else {
-//         if(j%2 === 0){
-//           temp += ' '
-//         }
-//         else{
-//           temp += '#'
-//         }
-//       }
-//     }
-//     result.push(temp)
-//   }
-//   return result
-// }
-
 function generateHourglass(value){
-  let arr = [];
-  let arr2 = [];
   let result = []
   let total = value*2-1
   for(let i=0; i<value; i++){

@@ -6,27 +6,30 @@ function lubangTerbesar(arr){
   let temp = []
   for(let i=0; i<arr.length; i++){
     for(let j=0; j<arr[i].length; j++){
-      temp.push([])
       if(arr[i][j] == 0){
+        temp.push(1)
         if(arr[j+1] !== undefined && arr[i][j+1] !== 1){
-          temp[i+j].push('0')
+          temp[i+j] += 1
         }
         else if(arr[i+1] !== undefined && arr[i+1][j] !== 1){
-          temp[i+j].push('0')
+          temp[i+j] += 1
         }
         else if(arr[i-1] !== undefined && arr[i-1][j] !== 1){
-          temp[i+j].push('0')
+          temp[i+j] += 1
         }
         else if(arr[j-1] !== undefined && arr[i][j-1] !== 1){
-          temp[i+j].push('0')
+          temp[i+j] += 1
         }
       }
     }
   }
-  let horizontal = 0
-  temp.sort()
-  for(let i=0; i<temp.length; i++){
-  }
+
+  temp.sort(function(a, b) {
+  return b - a})
+
+  let result = 0
+  let horizontal = temp[0]
+
   console.log(horizontal);
 }
 
