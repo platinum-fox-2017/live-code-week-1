@@ -7,13 +7,17 @@ Hint: Kamu bebas menggunakan metode apapun, dan manfaatkan prinsip kombinasi di 
 Contoh kombinasi valid:
 
 ((()))
+
 ()()()
+
 ()(()())
 
 Contoh kombinasi tidak valid:
 
 )()
+
 ()(
+  
 (()()
 
 Contoh:
