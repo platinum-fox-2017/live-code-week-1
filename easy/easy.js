@@ -3,14 +3,35 @@
 function generateHourglass(num) {
   let result = []
   let str = ''
-  for (let i = 0; i <= num; i++) {
-    let count = num
-    for (let j = 0; j <= num; j++) {
-      str += '#'
+  var count = 0
+  if(num === 1) {
+    result.push('#')
+  } else {
+    for (let i = 0; i < num; i++) {
+      for (let j = 0; j < num; j++) {
+        if(count <= num) {
+          str+= '#'
+          count++
+        } else {
+          str+=''
+          count--
+        }
+      }
+      result.push(str)
     }
-    result.push(str)
   }
   return result
 }
 
-console.log(generateHourglass(2));
+function printHourglass(arr) {
+  if(arr.length === 1) {
+    return arr.join('')
+  } else {
+      return arr.join('\n')
+  }
+}
+
+let hrglass1 = generateHourglass(2);
+console.log(hrglass1);
+console.log(typeof hrglass1); // object
+console.log(printHourglass(hrglass1));
