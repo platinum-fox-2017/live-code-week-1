@@ -15,7 +15,7 @@ function lubangTerbesar(arrStr) {
     // console.log(arrStr[3]); //[ '111', '111', '111', '100' ] // 100 // length: 3
     
     for (var j = 0; j < arrStr.length; j++) {
-        for (var i = 0; i < arrStr[j].length; i++) {
+        for (var i = 0; i < arrStr[j].length-1; i++) {
             var hitung0 = 1;
             if (arrStr[j][i] == '0' && arrStr[j][i+1] == '0') {
                 hitung0 +=1
@@ -43,7 +43,7 @@ function lubangTerbesar(arrStr) {
     // console.log(arrTampungVertical); // OK
 
     for (var j = 0; j < arrTampungVertical.length; j++) {
-        for (var i = 0; i < arrTampungVertical[j].length; i++) {
+        for (var i = 0; i < arrTampungVertical[j].length-1; i++) {
             var hitung0 = 1;
             if (arrTampungVertical[j][i] == '0' && arrTampungVertical[j][i+1] == '0') {
                 hitung0 +=1
