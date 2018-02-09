@@ -1,7 +1,13 @@
 function generateHourglass(num) {
+  let newNum = num * 2
   let arr = []
-  for (var i = 0; i < num; i++) {
-    arr.push('#')
+  for (var i = 1; i < newNum; i+=3) {
+    let hashTag= ''
+    for (var j = newNum; j > 0 ; j-= 2) {
+      hashTag += '#'
+      arr.push(hashTag)
+
+    }
   }
   return arr
 }
@@ -16,7 +22,7 @@ function printHourglass(obj) {
   }
   return tempChar
 }
-
-
+//
+//
 console.log(typeof hrglass1); // object
 console.log(printHourglass(hrglass1));
