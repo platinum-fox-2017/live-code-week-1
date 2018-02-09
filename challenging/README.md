@@ -17,13 +17,19 @@ Contoh kombinasi tidak valid:
 )()
 
 ()(
-  
+
 (()()
 
 Contoh:
 ```javascript
-generateParen(3) // [ '((()))', '(()())', '(())()', '()(())', '()()()' ]
-generateParen(4) // [ '(((())))',
+generateParen(3) // [
+  '((()))',
+  '(()())',
+  '(())()',
+  '()(())',
+  '()()()' ]
+generateParen(4) //
+[ '(((())))',
   '((()()))',
   '((())())',
   '((()))()',

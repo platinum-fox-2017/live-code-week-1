@@ -21,3 +21,6 @@ function printParen(num, openCount, closeCount, str,arr){
 
 console.log(generateParen(4));
 console.log(generateParen(3));
+console.log(generateParen(2));
+console.log(generateParen(5));
+console.log(generateParen(1));
