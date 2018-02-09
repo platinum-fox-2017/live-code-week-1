@@ -5,10 +5,7 @@ function lubangTerbesar(array){
     combine.push(splitStr)
   }
   console.log(combine);
-  // count
-
   let holeMax=0;
-  // horizontal
   for (let i = 0; i < combine.length; i++) {
     let holeCount = 0;
 
@@ -18,7 +15,6 @@ function lubangTerbesar(array){
         if (holeCount > holeMax) {
           holeMax = holeCount
         }
-        // console.log(holeCount);
       } else {
         if (holeCount > holeMax) {
           holeMax = holeCount
@@ -28,8 +24,6 @@ function lubangTerbesar(array){
 
     }
   }
-  console.log('holemax', holeMax);
-  // vertical
   for (let i = 0; i < combine.length; i++) {
     let holeCount = 0;
 
@@ -39,27 +33,16 @@ function lubangTerbesar(array){
         if (holeCount > holeMax) {
           holeMax = holeCount
         }
-        // console.log(holeCount);
       } else {
         if (holeCount > holeMax) {
           holeMax = holeCount
-
         }
         holeCount = 0
       }
-
     }
   }
-
   return holeMax
 }
-
-
-
-
-
-
-
 
 
 // driver
