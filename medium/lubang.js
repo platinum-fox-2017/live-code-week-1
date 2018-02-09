@@ -8,7 +8,7 @@ function lubangTerbesar(input){
 		}
 		array.push(inside)
 	}
-	// console.log(array)
+	console.log(array)
 	let posisi0 =[]
 	for(let i =0;i<array.length;i++){
 		for(let j=0;j<array[i].length;j++){
@@ -20,18 +20,21 @@ function lubangTerbesar(input){
 	// console.log(posisi0)
 	let count0Vert = 0
 	let count0Hor = 0
+	// let test0 = []
 	for(let i =0;i<posisi0.length;i++){
-		// console.log(posisi0[i])
-		for(let j =0;j<posisi0[i].length;j++){
-			// console.log(i,posisi0[i][0])
-			console.log('i',i,'posisi',posisi0[i][j])
-			if(i === posisi0[i][1] && i == j){
-				count0Vert+=1
-			}
-			
+		for(let j =0;j<posisi0.length;j++){
+			// console.log('i',i,'j',j,'posisi',posisi0[i][1])
+		if(j === posisi0[i][1] && i !==j){
+			// test0.push([posisi0[i][1]])
+			count0Vert+=1
 		}
+		}
+		
+		// console.log('i',i,'posisi',posisi0[i][1])
 	}
-	console.log(count0Vert)
+	// console.log(test0)
+	console.log(count0Vert,"ini ver")
+	console.log(count0Hor,"ini hor")
 	if(count0Vert>count0Hor){
 		return count0Vert
 	}else{
