@@ -3,7 +3,7 @@ function generateParen(num) {
     var arr = []
     for (var j = i; j < num; j++) {
       if () {
-        arr.push('(')
+        arr.push('()')
 
       }
     }
