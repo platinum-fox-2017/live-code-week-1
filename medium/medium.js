@@ -14,24 +14,42 @@ function lubangTerbesar(arr) {
     arrLubang.push(temp);
   }
 
-  // [ [ '0', '0', '1', '1', '1' ],
-  // [ '0', '1', '1', '0', '1' ],
-  // [ '0', '0', '1', '0', '0' ],
-  // [ '1', '1', '1', '1', '0' ] ]
+  //      0    1    2    3    4
+  // 0 [ [ '0', '0', '1', '1', '1' ],
+  // 1 [ '0', '1', '1', '0', '1' ],
+  // 2 [ '0', '0', '1', '0', '0' ],
+  // 3 [ '1', '1', '1', '1', '0' ] ]
 
-  
+  // horizontal
+  // start from the first row
+  // check the first index if it's 0 >> countLubang++
+  // check the next index if it's 0, yes >> countLubang++, no >> stop, countLubang >> currentcount
+  // continue to the next row, repeat the steps above
+  // if countLubang > currentcount, reassign the value
+  // continue till the last row
+  // do vertical check
+  // vertical
+  // same as horizontal start from the first column till the last column instead
+
   var countLubang = 0;
   var indexLubang;
-  for (let i = 0; i < arrLubang[0].length; i++) {
-    if(arrLubang[0][i] === 0) {
-      countLubang++;
-      indexLubang = i;
+  debugger
+  // horizontal check
+  for (let i = 0; i < arrLubang.length; i++) {
+    debugger
+    for (let j = 0; j < arrLubang[0].length; j++) {
+      debugger
+      if(Number(arrLubang[i][j]) === 0) {
+        if(Number(arrLubang[i][j+1])) {
+          countLubang;
+        }
+      }
     }
   }
-  console.log(row,'<<<');
-  console.log(column,'<<<<');
-  console.log(arr[0])
-  return arrLubang;
+  // console.log(row,'<<<');
+  // console.log(column,'<<<<');
+  console.log(countLubang,'<<<')
+  console.log(arrLubang[0].length)
 }
 
 console.log(lubangTerbesar(["00111", "01101", "00100", "11110"])); // 3
