@@ -7,37 +7,29 @@ function generateHourglass(num){
 
     for(let i=0; i<mid; i++){
         let str = '';
-        for(let j=0; j<=print; j++){
-            str += 'X';
+        for(let j=0; j<i; j++){
+            str += ' '
         }
+        for(let j=0; j<=print; j++){
+            str += '#';
+        }
+        let str2 = '';
+        for(let j=str.length; j<(num*2)-1; j++){
+            str2 += ' '
+        }
+
         if(print==1){
             print -= 1;
         }else{
             print -= 2;
         }
-        result.push(str);
+        result.push(str+str2);
     }
+    
     for(let i=mid-2; i>=0; i--){
-        result.push(result[i])
+        result.push(result[i]);
     }
-    return result;
+    return result.join('\n');
 }
 
 console.log(generateHourglass(5));
-
-function printHourglass(num){
-    // let mid = Math.ceil((num.length)/2);
-    // let result = [];
-    // for(let i=0; i<mid; i++){
-    //     let str = '';
-    //     for(let j=0; j<i; j++){
-    //         str += ' '
-    //     }
-        
-
-    // }
-    // return mid
-}
-
-
-console.log(printHourglass(generateHourglass(5)));
