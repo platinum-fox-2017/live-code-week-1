@@ -4,7 +4,7 @@ function generateHourglass(num){
   for (i = 1; i < 2*num; i++){
       let temp = ''
     for (j = 1; j < 2*num; j++){
-      if (i <= j && i+j <= 2*num || i > num && i >= j && i+j >= 2*num ){
+      if (i <= j && i+j <= 2*num || i >= j && i+j >= 2*num ){
         temp += '#'
       }else{
         temp += ' '

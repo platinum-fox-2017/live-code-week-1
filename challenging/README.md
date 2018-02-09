@@ -17,7 +17,7 @@ Contoh kombinasi tidak valid:
 )()
 
 ()(
-  
+
 (()()
 
 Contoh:
