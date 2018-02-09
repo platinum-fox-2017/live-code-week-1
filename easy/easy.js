@@ -20,18 +20,23 @@ n selisih arr
   console.log(arr);
 
   //memasukan #
-  let text = ''
-  for(i=1; i<=num; i++) {
-    for(j=1; j<i; j++) {
 
-    }
-  }
 
+
+  
+  // for(i=0; i<num; i++) {
+  //   let text = ''
+  //   for(j=num; j>i; j--) {
+  //     if(j%2 == 1) {
+  //       for(let k=j; k>0; k--) {
+  //         text += '#'
+  //       }
+  //     }
+  //   }
+  //   console.log(text);
+  // }
 
 }
-1-1
-2-3
-3-5
 
 console.log(generateHourglass(3));
 //
