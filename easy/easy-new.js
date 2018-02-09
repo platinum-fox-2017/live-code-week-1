@@ -13,7 +13,6 @@ function generateHourglass(number) {
     arrayStr.push(hash)
   }
 
-
   for (let i = 0; i < number-1; i++) {
     let hash = ''
     for (let k = 0; k < 2+i ; k++) {
@@ -24,39 +23,38 @@ function generateHourglass(number) {
     }
     arrayStr.push(hash)
   }
-
-
-
-
   return arrayStr
 }
 
 function printHourglass(arrayStr) {
-  let logHash= [];
-  for (var i = 0; i < arrayStr.length; i++) {
-    // console.log(i);
-    let hashes = []
-
-    for (let j = 0; j < i; j++) {
-      hashes.push(' ')
+  let number = (arrayStr.length+1)/2
+  for (let i = 0; i < number; i++) {
+    for (let j = 1+i; j < number; j++) { // arrayStr
+      arrayStr[j] = ' ' + arrayStr[j]
     }
-
-    hashes.push(arrayStr[i])
-
-    hashes.push(' ')
-
-    hashes.join('')
-    logHash.push(hashes)
+  }
+  for (let i = 0; i < number; i++) {
+    for (let j = 1+i; j < number; j++) { // arrayStr
+      arrayStr[j] = arrayStr[j] + ' '
+    }
   }
 
+  for (let i = number; i > 0; i--) {
+    for (let j = number; j < number+(number-1)-i; j++) {
+      arrayStr[j] = ' ' + arrayStr[j]
+    }
+  }
+  for (let i = number; i > 0; i--) {
+    for (let j = number; j < number+(number-1)-i; j++) {
+      arrayStr[j] = arrayStr[j] + ' '
+    }
+  }
 
-  // as hourglass
-  return logHash
+  return arrayStr
 }
 
 // num > 0
-let hrglass = generateHourglass(4);
+let hrglass = generateHourglass(10);
 console.log(typeof hrglass);
-console.log(hrglass);
-
-// console.log(printHourglass(hrglass));
+// console.log(hrglass);
+console.log(printHourglass(hrglass));
