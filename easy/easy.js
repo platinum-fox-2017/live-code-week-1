@@ -1,33 +1,34 @@
 function generateHourglass(num) {
     let stars = ['#', '###', '#####', '#######', '#########']
 
-    if (num === 1) {
-        let arr = []
-        for (let i = 0; i < num; i++) {
-            arr.push(stars[i])
-            console.log(arr)
-            return arr
+    for (let i = 0; i < num; i++) {
+        let result = []
+        for (let j = 0; j < num-1; j++) {
+            result.push('')
         }
-    } else if (num === 2) {
-        let arr = []
-        for (let i = 0; i < num; i++) {
-            arr.push(stars[i])
-            console.log(arr)
-            return arr
+        for (let k = 0; k <= i; k++) {
+            result.push('#')
         }
+        console.log(result)
     }
+    
 
-    // if (num === ganjil[0]) {
+    // if (num === 1) {
     //     let arr = []
-    //     arr.push('#')
-    //     console.log(arr)
-    //     return arr
-    // }
-    // else if (num === ganjil[1]) {
+    //     for (let i = 0; i <= num; i++) {
+    //         arr.push(stars[i])
+    //         console.log(arr)
+    //         return arr
+    //     }
+    // } else if (num === 2) {
     //     let arr = []
-    //     arr.push('###')
-    //     console.log(arr)
-    //     return arr
+    //     for (let i = 0; i <= num; i++) {
+    //         for (let j = 0; j < num; j++) {
+    //             arr.push(stars[i][j])
+    //             console.log(arr)
+    //             return arr
+    //         }
+    //     }
     // }
 }
 
@@ -38,6 +39,6 @@ function printHourglass(arr) {
 }
 
 //driver code
-let hrglass = generateHourglass(2);
+let hrglass = generateHourglass(5);
 console.log(typeof hrglass);
 console.log(printHourglass(hrglass));
