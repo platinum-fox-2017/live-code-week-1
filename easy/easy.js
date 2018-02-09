@@ -1,14 +1,30 @@
 const generateHourglass = rows =>{
     let arr = []
-    for(let i=rows; i>=1; i--){
-        let str=''
-        for (let j=0; j<rows-1; j++){
-            if(i>j){
-                str+='#'
-            }
+     for(i = rows-1;i >= 1; i--) {
+         let str='';
+        for(space = 0; space <=rows-i; space++) {
+           str+=' ';
         }
-    arr.push(str)
+        let has = 0;
+        while(has != (2*i - 1)) {
+            str+='#'
+            has++;
+        }
+        arr.push(str)
     }
+
+    for(i = 1; i<rows; i++) {
+        let str='';
+       for(space = 0; space <= rows-i; space++) {
+          str+=' ';
+       }
+       let has = 0;
+       while(has != (2*i - 1)) {
+           str+='#'
+           has++;
+       }
+       arr.push(str)
+   }
 
     return arr;
 
