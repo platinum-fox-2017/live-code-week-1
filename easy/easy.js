@@ -1,16 +1,20 @@
 function generateHourglass(num) {
-    let stars = ['#', '###', '#####', '#######', '#########']
 
-    for (let i = 0; i < num; i++) {
-        let result = []
-        for (let j = 0; j < num-1; j++) {
-            result.push('')
+    for (let i = num; i > 1; i--) {
+        let outerArr = []
+        for (let j = 0; j < i; j++) {
+            outerArr.push('#')
         }
-        for (let k = 0; k <= i; k++) {
-            result.push('#')
-        }
-        console.log(result)
+        console.log(outerArr)
     }
+    for (let i = 0; i < num; i++) {
+        let outerArr = []
+        for (let k = 0; k <= i; k++) {
+            outerArr.push('#')
+        }
+        console.log(outerArr)
+    }
+
     
 
     // if (num === 1) {
