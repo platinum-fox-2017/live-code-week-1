@@ -1,53 +1,60 @@
 function generateHourglass(number) {
   let arrayStr = [];
   // loop from 0 to number
-  for (let i = 0; i < (2*number)-1; i++) {
-    let hash =''
-    for (let j = (2*number)-1-i; j > 0; j--) {
+  for (let i = 0; i < number; i++) {
+    let hash = ''
+    for (let k = number-i; k > 0 ; k--) {
       hash += '#'
     }
-    // console.log(hash);
-    arrayStr.push(hash);
+    for (let j = number-i; j > 1 ; j--) {
+      // console.log(j);
+      hash += '#'
+    }
+    arrayStr.push(hash)
   }
-  for (let i = (2*number)-1; i > 0; i--) {
-    let hash ='#'
-    for (let j = 0; j < (2*number)-1-i ; j++) {
+
+  for (let i = 0; i < number-1; i++) {
+    let hash = ''
+    for (let k = 0; k < 2+i ; k++) {
       hash += '#'
     }
-    // console.log(hash);
-    if (hash !=='#') {
-      arrayStr.push(hash);
+    for (let j = 0; j < 1+i ; j++) {
+      hash += '#'
     }
+    arrayStr.push(hash)
   }
   return arrayStr
 }
 
 function printHourglass(arrayStr) {
-  let logHash= [];
-  for (var i = 0; i < arrayStr.length; i++) {
-    // console.log(i);
-    let hashes = []
-
-    for (let j = 0; j < i; j++) {
-      hashes.push(' ')
+  let number = (arrayStr.length+1)/2
+  for (let i = 0; i < number; i++) {
+    for (let j = 1+i; j < number; j++) { // arrayStr
+      arrayStr[j] = ' ' + arrayStr[j]
     }
-
-    hashes.push(arrayStr[i])
-
-    hashes.push(' ')
-
-    hashes.join('')
-    logHash.push(hashes)
+  }
+  for (let i = 0; i < number; i++) {
+    for (let j = 1+i; j < number; j++) { // arrayStr
+      arrayStr[j] = arrayStr[j] + ' '
+    }
   }
 
+  for (let i = number; i > 0; i--) {
+    for (let j = number; j < number+(number-1)-i; j++) {
+      arrayStr[j] = ' ' + arrayStr[j]
+    }
+  }
+  for (let i = number; i > 0; i--) {
+    for (let j = number; j < number+(number-1)-i; j++) {
+      arrayStr[j] = arrayStr[j] + ' '
+    }
+  }
 
-  // as hourglass
-  return logHash
+  return arrayStr
 }
 
 // num > 0
-let hrglass = generateHourglass(5);
+let hrglass = generateHourglass(10);
 console.log(typeof hrglass);
-console.log(hrglass);
-
-// console.log(printHourglass(hrglass));
+// console.log(hrglass);
+console.log(printHourglass(hrglass));
