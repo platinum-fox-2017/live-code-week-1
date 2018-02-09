@@ -6,12 +6,12 @@ function generateHourGlass(input){
     //obj = arr.push(content[i])
     arr.push([])
     for(let j=0; j<input; j++){
-      arr[i].push(content[j])
+      arr[i].push(content)
       j++
     }
   }
   return arr
 }
 
-console.log(generateHourGlass(1))
+console.log(generateHourGlass(3))
 console.log('===============================');
