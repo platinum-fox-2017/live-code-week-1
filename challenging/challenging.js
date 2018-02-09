@@ -15,21 +15,22 @@ function generateParen(num){
     let processing = []
 
     for (let i = 0; i <tempResult.length-1; i++){
-       processing.push(tempResult[i])
-       for (let j = 0; j < processing[i].length; j++){
+        processing.push(tempResult[i])
+        for (let j = 0; j < processing[i].length; j++){
             if(processing[i][j] == leftParen){
                 leftParenCount++
             } else if (processing[i][j] == rightParen){
                 rightParenCount++
             }
-       }
-       switch(leftParenCount){
-           case 1: tempResult.unshift('('.repeat(num-leftParenCount) + processing[i] + ')'.repeat(num-rightParenCount)); break;
-           case 2: tempResult.unshift('('.repeat(num-leftParenCount) + processing[i] + ')'.repeat(num-rightParenCount)); break;
-       }
+        }
+        if (leftParenCount == 2){
+            tempResult.unshift('('.repeat(num-leftParenCount) + processing[i] + ')'.repeat(num-rightParenCount)); break;
+        } else if (leftParenCount == 1){
+            tempResult.unshift('('.repeat(num-leftParenCount) + processing[i] + ')'.repeat(num-rightParenCount)); break;
+        }
     }
     console.log(tempResult)
-    // console.log(process)
+
 }
 
 generateParen(3) // [ '((()))', '(()())', '(())()', '()(())', '()()()' ]
