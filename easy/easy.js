@@ -4,19 +4,35 @@
       var ganjil=[];
       var batas=1;
       var pagar=[];
-      for(let i=1;i<input;i++){
+      var gabung='';
+      for(var k=1;k<=input;k++){
         ganjil.push(batas);
         batas=batas+2;
-        for(let i=ganjil.length-1;i>0;i--){
-          for(let j=0;j<i;j++){
-            pagar.push('#');
-          }
-        }
       }
-    return pagar;
+        for(var i=ganjil.length-1;i>=0;i--){
+          for(var j=0;j<ganjil[i];j++){
+              gabung += '#';
+           //console.log(ganjil[i])
+          }
+          //console.log(gabung);
+          pagar.push(gabung);
+           gabung='';
+        }
+
+          for(var i=1;i<=ganjil.length-1;i++){
+              for(var j=0;j<ganjil[i];j++){
+                gabung += '#';
+             //console.log(ganjil[i])
+            }
+            //console.log(gabung);
+            pagar.push(gabung);
+             gabung='';
+          }
+
+   return pagar;
     }
 
 let hrglass = generateHourglass(5);
-console.log(typeof hrglass);
+//console.log(typeof hrglass);
 //console.log(printHourglass(hrglass));
 console.log(generateHourglass(5));
