@@ -14,21 +14,33 @@ output: string
 
 function generatehourglass(number) {
 
-    var arrHashTag = [];
+    var arrHasil = [];
     var index = number + 1;
-
-    var angka = 1;
-
-    for (var j = 0; j < number; j++) {
-        for (var i = 0; i < number; i++) {
-            arrHashTag.push(i);
+    var hash = '#'
+    
+    for (var j = 0; j < number+1; j++) {
+        var arrHashTag = [];
+        if (j % 2 == 0) {
+            for (var i = 0; i < number+1; i++) {
+                arrHashTag.push(hash);
+            }
+            var joint = arrHashTag.join('');
+            arrHasil.push(joint);    
+        } else {
+            for (var i = 0; i < number-1; i++) {
+                arrHashTag.push('#');
+            }
+            var joint = arrHashTag.join('');
+            arrHasil.push(joint);
         }
-
     }
 
-    return arrHashTag;
+    return arrHasil;
 
 }
 
+// then create object of hourglass for input to printhourglass
+var obj = {}
 
-console.log(generatehourglass(3));
+let hourglass = generatehourglass(4);
+console.log(hourglass);
