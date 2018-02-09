@@ -23,15 +23,22 @@ function generateHourglass(num){
     indexDepanTerbaru = indexDepan + i;
     indexTerakhirTerbaru = indexBelakang - i;
    }
-
-   for(var i = 1; i < num; i++){
+    indexDepan = indexDepanTerbaru;
+    indexBelakang = indexTerakhirTerbaru;
+    isiHourGlass[num] = '#'
+    console.log(isiHourGlass);
+   for(var i = 0 ; i < num; i++){
      
+    isiHourGlass[indexDepan - i] = '#';
+    isiHourGlass[indexBelakang + i ] = '#';
     var joinIsiHourGlass = isiHourGlass.join(''); 
-    arrayHourGlass.push(joinIsiHourGlass);
+    if(i === 0){
+      
+    } else {
+      
+      arrayHourGlass.push(joinIsiHourGlass);
+    }
     isiHourGlass = joinIsiHourGlass.split('');
-    isiHourGlass[indexDepan + i] = ' ';
-    isiHourGlass[indexBelakang - i ] = ' ';
-     arrayHourGlass.push(isiHourGlass);
    }
 
 
@@ -39,10 +46,7 @@ function generateHourglass(num){
 }
 
 function printHourglass(hourGlass){
-
-  for(var i = 0; i < hourGlass.length; i++){
-    console.l  
-  }
+  return hourGlass.join('\n');
 }
 
 
