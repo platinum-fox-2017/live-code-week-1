@@ -10,17 +10,28 @@ n selisih arr
 5    4    9    (i=9,7,5,3,1,3,5,7,9)
 }
 */
-
+  //membuat array
   let arr = []
-  for(let i=0; i<num; i++) {
-    for(let j=1; j<=num; j++) {
-      for(let k=j-i; k<=j-i; k++) {
-        arr.push([])
-      }
+  for(let i=1; i<=num; i++) {
+    for(let j=(i*2-1); j<=(i*2-1); j++) {
+      arr.push([])
     }
   }
   console.log(arr);
+
+  //memasukan #
+  let text = ''
+  for(i=1; i<=num; i++) {
+    for(j=1; j<i; j++) {
+
+    }
+  }
+
+
 }
+1-1
+2-3
+3-5
 
 console.log(generateHourglass(3));
 //
