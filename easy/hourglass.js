@@ -1,6 +1,6 @@
 function generateHourglass(input){
   let array = [];
-  let isi = '#';
+  let isi = 'x';
   let isiTambahan = ' ';
   for(let i=(input+input-1); i>0; i-=2){
     let akumulasi = '';
@@ -38,14 +38,26 @@ function generateHourglass(input){
   return array;
 }
 
-function printHourglass(input){;
-  let denganKurungSiku = generateHourglass(3);
-  for(let s=0; s<denganKurungSiku.length; s++){
-    console.log(denganKurungSiku[s]);
+function printHourglass(input){
+  let array = input;
+  let newArray = [];
+  for(let s=0; s<array.length; s++){
+    let variabelBaru = '';
+    for(let d=0; d<array[s].length; d++){
+      let ubah = array[s][d];
+      if(array[s][d]==='x'){
+        ubah = '#';
+        variabelBaru += ubah;
+      } else {
+        variabelBaru += ubah;
+      }
+    }
+    newArray.push(variabelBaru);
   }
+  return newArray.join('\n');
 }
 
-let hrglass1 = generateHourglass(1);
+let hrglass1 = generateHourglass(6);
 console.log(hrglass1);
 /*
 [ 'x' ]
